@@ -2,20 +2,20 @@ import { Schema, model } from 'mongoose'
 
 const UserSchema = new Schema({
     name: {
-        type: string,
+        type: String,
         required: true,
     },
     email: {
-        type: string,
+        type: String,
         required: true,
     },
     password: {
-        type: string,
+        type: String,
         required: true,
     },
     bio: String,
     avatar: {
-        type: string,
+        type: String,
         required: true,
     },
 }, { timestamps: true })
