@@ -23,6 +23,18 @@ class PostController {
 
         return response.status(201).json(post)
     }
+
+    async index(request, response) {
+        const post = await Post.find()
+
+        return response.status(200).json(post)
+    }
+
+    async indexAll(request, response) {
+        const post = await Post.find({ user: request.params.userId })
+
+        return response.status(200).json(post)
+    }
 }
 
 export default new PostController()
