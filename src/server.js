@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
+import cors from 'cors'
 
 import routes from './routes'
 
@@ -13,6 +14,7 @@ mongoose.connect(
     `mongodb+srv://ptbelo:${process.env.DB_PASSWORD}@cluster0.5pbvq.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true }
 )
 
+server.use(cors())
 server.use(express.json())
 server.use(routes)
 
